@@ -12,11 +12,35 @@
 # JWT组成  
 JWT由三个部分组成：header.payload.signature
 
-## header
+## header   
 ```
 {
   "alg": "HS256",
   "typ": "JWT"
 }
 ```
+对应base64UrlEncode编码为：eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9   
+说明：该字段为json格式。alg字段指定了生成signature的算法，默认值为 HS256，typ默认值为JWT   
 
+## payload    
+```
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+}
+```   
+
+对应base64UrlEncode编码为：eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ   
+说明：该字段为json格式，表明用户身份的数据，可以自己自定义字段，很灵活。sub 面向的用户，name 姓名 ,iat 签发时间。例如可自定义示例如下：   
+
+```
+{
+    "iss": "admin",          //该JWT的签发者
+    "iat": 1535967430,        //签发时间
+    "exp": 1535974630,        //过期时间
+    "nbf": 1535967430,         //该时间之前不接收处理该Token
+    "sub": "www.admin.com",   //面向的用户
+    "jti": "9f10e796726e332cec401c569969e13e"   //该Token唯一标识
+}
+```
