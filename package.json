@@ -1,0 +1,22 @@
+{
+  "name": "basic-knowledge",
+  "version": "1.0.0",
+  "description": "[JWT简介](https://github.com/shadow88sky/Basic-Knowledge/blob/master/JWT.md)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadow88sky/Basic-Knowledge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shadow88sky/Basic-Knowledge/issues"
+  },
+  "homepage": "https://github.com/shadow88sky/Basic-Knowledge#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  }
+}
